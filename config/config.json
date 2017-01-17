@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "root",
+    "username": "c4q-ac26",
     "password": null,
-    "database": "database_development",
+    "database": "schoolz",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
-    "username": "root",
+    "username": "c4q-ac26",
     "password": null,
-    "database": "database_test",
+    "database": "schoolz",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
     "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }
