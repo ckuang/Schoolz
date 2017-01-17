@@ -1,6 +1,6 @@
 process.env.NODE_ENV = 'test';
 
-let models = require('../models')
+let models = require('../models');
 let School = models.School;
 let Student = models.Student;
 
@@ -13,7 +13,7 @@ let should = chai.should();
 //write a function to seed your database before every test inside of the seed folder
 //your seed function should create 4 schools
 //your seed function should create 2 students that attend the first school
-let seedFunction = require('../seed')
+let seedFunction = require('../seed');
 
 
 chai.use(chaiHttp);
@@ -21,7 +21,7 @@ chai.use(chaiHttp);
 describe('Education', () => {
     beforeEach((done) => { //Before each test we empty the database
       models.sequelize.sync({force: true}).then(function() {
-        seedFunction()
+        seedFunction();
         done();
       })
     });
@@ -43,7 +43,12 @@ describe('Education', () => {
 
   describe('/POST school', () => {
       it('it should POST a school ', (done) => {
-        let school = schools[1]
+        // let school = schools[1]
+          let school = {
+              name: 'c4q',
+              district:'LIC',
+              size: 30
+          };
         chai.request(server)
             .post('/api/schools')
             .send(school)
@@ -61,7 +66,11 @@ describe('Education', () => {
 
   describe('/POST student', () => {
       it('it should POST a student ', (done) => {
-        let student = students[0]
+        let student = {
+                name: 'puppy1',
+                age:4,
+                grade: 'A'
+        };
         chai.request(server)
             .post('/api/student')
             .send(student)
